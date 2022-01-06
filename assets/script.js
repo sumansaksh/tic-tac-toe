@@ -35,7 +35,7 @@ const checkWin = ()=>{
 }
 
 // Game Logic
- music.play()
+
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
@@ -63,5 +63,20 @@ reset.addEventListener('click', ()=>{
     document.querySelector(".line").style.width = "0vw";
     document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
+    console.log("suman")
 })
 
+let count =0 
+
+sound.addEventListener('click', ()=>{
+   
+    if(count==0){
+        music.play()
+        count = 1
+    }else{
+        music.pause()
+        count = 0
+    }
+   
+   
+})
